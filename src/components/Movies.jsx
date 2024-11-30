@@ -5,6 +5,8 @@ import ErrorImg from "../assets/not-found.svg";
 import Movie from "./Movie";
 
 export default function Movies({ movies, displayImg }) {
+  console.log("Movies!!! " + movies);
+
   return (
     <div className="movies__display--container">
       {displayImg === "default" ? (

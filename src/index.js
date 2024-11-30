@@ -16,6 +16,8 @@ import {
   faArrowLeft,
   faX,
   faMagnifyingGlass,
+  faThumbsUp,
+  faThumbsDown,
 } from "@fortawesome/free-solid-svg-icons";
 
 library.add(
@@ -29,7 +31,9 @@ library.add(
   faStarHalfAlt,
   faArrowLeft,
   faX,
-  faMagnifyingGlass
+  faMagnifyingGlass,
+  faThumbsUp,
+  faThumbsDown
 );
 
 const root = ReactDOM.createRoot(document.getElementById("root"));

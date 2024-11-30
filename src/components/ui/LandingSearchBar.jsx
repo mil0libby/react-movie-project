@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
 
 export default function LandingSeachBar() {
-  const [value, setValue] = useState("   ");
+  const [value, setValue] = useState("football");
 
   return (
     <div className="search__container">
@@ -11,7 +11,7 @@ export default function LandingSeachBar() {
         <input
           type="text"
           name=""
-          className="search__bar"
+          className="search__bar search__bar--landing"
           placeholder="search here"
           id="search"
           onChange={(event) => {

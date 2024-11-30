@@ -1,11 +1,9 @@
 import React, { useState } from "react";
 import Logo from "../assets/logo.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faL } from "@fortawesome/free-solid-svg-icons";
-import SeachBar from "./SeachBar";
 import { Link } from "react-router-dom";
 
-export default function Nav({ setMovies, setDisplayImg }) {
+export default function Nav() {
   const [openMenu, setOpenMenu] = useState(false);
 
   return (
@@ -41,18 +39,14 @@ export default function Nav({ setMovies, setDisplayImg }) {
             <Link className="link" to="/">
               Home
             </Link>
-            <a className="link" href="">
+            <Link className="link" to="/find-movies/christmas">
               Find Movies
-            </a>
-            <a className="link" href="">
+            </Link>
+            <Link className="link" to="/movie-display/tt0170016">
               Contact
-            </a>
+            </Link>
           </div>
         </div>
-        <SeachBar
-          setMovies={setMovies}
-          setDisplayImg={setDisplayImg}
-        ></SeachBar>
       </div>
     </nav>
   );
