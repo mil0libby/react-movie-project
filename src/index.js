@@ -18,6 +18,11 @@ import {
   faMagnifyingGlass,
   faThumbsUp,
   faThumbsDown,
+  faTemperatureEmpty,
+  faTemperatureQuarter,
+  faTemperatureThreeQuarters,
+  faTemperatureHalf,
+  faTemperatureFull,
 } from "@fortawesome/free-solid-svg-icons";
 
 library.add(
@@ -33,7 +38,12 @@ library.add(
   faX,
   faMagnifyingGlass,
   faThumbsUp,
-  faThumbsDown
+  faThumbsDown,
+  faTemperatureEmpty,
+  faTemperatureQuarter,
+  faTemperatureThreeQuarters,
+  faTemperatureHalf,
+  faTemperatureFull
 );
 
 const root = ReactDOM.createRoot(document.getElementById("root"));

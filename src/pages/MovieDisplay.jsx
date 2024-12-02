@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Rating from "../components/ui/Rating";
+import Recommended from "../components/Recommended";
 
 export default function MovieDisplay() {
   const { id } = useParams();
@@ -66,6 +67,9 @@ export default function MovieDisplay() {
               <p className="director">Director: {loaded && movie.Director}</p>
               <p className="actors">Actors: {loaded && movie.Actors}</p>
               <p className="plot">{loaded && movie.Plot}</p>
+            </div>
+            <div className="recommended__movies">
+              <Recommended ID={id ? id : null}></Recommended>
             </div>
           </div>
         </div>

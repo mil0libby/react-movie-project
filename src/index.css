@@ -102,6 +102,19 @@ nav {
 
 .movie__title {
   text-align: center;
+  text-decoration: none !important;
+  color: black;
+}
+
+a {
+  text-decoration: none;
+}
+
+.novie__title:hover,
+movie__title:focus,
+.movie__title:active {
+  color: inherit; /* Ensures color doesn't change on hover or focus */
+  text-decoration: none; /* Prevents underline or other decoration on interaction */
 }
 
 .movie__poster {
@@ -264,17 +277,19 @@ LANDING
   max-width: 275px;
   text-align: center;
   font-weight: 600;
+  padding-bottom: 12px;
 }
 
 .row__landing {
   display: flex;
   flex-direction: column;
   align-items: center;
+  height: calc(100vh - 94px);
 }
 
 .movie__img--landing {
   width: 350px;
-  padding-top: 12px;
+  padding-top: 42px;
 }
 
 .search__bar--landing {
@@ -291,6 +306,8 @@ MOVIE DISPLAY
   display: flex;
   align-items: center;
   justify-content: center;
+  background-color: rgba(19, 0, 0, 0.127);
+  padding-bottom: 12px;
 }
 
 .movie__description--container {
@@ -312,15 +329,55 @@ MOVIE DISPLAY
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  height: calc(100vh - 100px);
+  min-height: calc(100vh - 100px);
+}
+
+.movie__container--right {
+  align-items: center;
+  justify-content: center;
+}
+
+.director,
+.actors,
+.plot {
+  padding: 16px;
+}
+
+.director {
+  font-size: 40px;
+  padding-bottom: 4px;
+  padding-top: 48px;
+}
+
+.actors {
+  padding-top: 0;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.plot {
+  font-size: 18px;
 }
 
 .movie__title--display {
   font-size: 36px;
+  font-weight: 700;
+  -webkit-text-stroke: 2px white;
+  text-align: center;
+}
+
+.movie__title--display--wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.movie__genre {
 }
 
 .movie__poster {
-  width: 300px;
+  width: 100%;
 }
 
 .tomatoe {
@@ -384,14 +441,30 @@ MOVIE DISPLAY
   padding-bottom: 14px;
 }
 
+.icon__metacritic {
+  padding-bottom: 12px;
+}
+
 .yellow {
   color: rgb(198, 198, 49);
 }
 
 .red {
-  color: red;
+  color: rgb(183, 34, 34);
 }
 
 .green {
-  color: lime;
+  color: rgb(36, 219, 36);
+}
+
+.recommended__container {
+  display: flex;
+  align-items: start;
+  justify-content: center;
+}
+
+.recommended__header {
+  padding-top: 42px;
+  padding-left: 16px;
+  font-size: 16px;
 }

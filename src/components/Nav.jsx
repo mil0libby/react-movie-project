@@ -42,7 +42,7 @@ export default function Nav() {
             <Link className="link" to="/find-movies/christmas">
               Find Movies
             </Link>
-            <Link className="link" to="/movie-display/tt0170016">
+            <Link className="link" to="/">
               Contact
             </Link>
           </div>
