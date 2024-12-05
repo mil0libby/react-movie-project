@@ -35,7 +35,7 @@ export default function MovieDisplay() {
     const timeout = setTimeout(() => {
       console.log(movie);
       setLoaded(true);
-    }, 2000); // Delay of 1000ms (1 second)
+    }, 1000); // Delay of 1000ms (2 second)
 
     return () => clearTimeout(timeout); // Cleanup the timeout on dependency change or unmount
   }, [movie]);
@@ -46,30 +46,129 @@ export default function MovieDisplay() {
         <div className="movie__container">
           <div className="movie__container--left">
             <div className="movie__title--display--wrapper">
-              <h3 className="movie__title--display">{loaded && movie.Title}</h3>
-              <h4 className="movie__genre">{loaded && movie.Genre}</h4>
+              {loaded ? (
+                <h3 className="movie__title--display">{movie.Title}</h3>
+              ) : (
+                <h3 className="movie__title--display--skeleton skeleton"></h3>
+              )}
+              {loaded ? (
+                <h4 className="movie__genre">
+                  {movie.Genre.split(",").map((genre) => (
+                    <span className="genre__wrapper">{genre}</span>
+                  ))}
+                </h4>
+              ) : (
+                <h4 className="genre__wrapper--skeleton skeleton"></h4>
+              )}
             </div>
+
             <figure className="movie__poster--wrapper">
-              <img
-                src={loaded && movie.Poster}
-                alt=""
-                className="movie__poster"
-              />
+              {loaded ? (
+                <img
+                  src={loaded && movie.Poster}
+                  alt=""
+                  className="movie__poster--main"
+                />
+              ) : (
+                <div className="movie__poster--skeleton skeleton"></div>
+              )}
             </figure>
-            <Rating
-              r1={loaded && movie.Ratings[0]}
-              r2={loaded && movie.Ratings[1]}
-              r3={loaded && movie.Ratings[2]}
-            ></Rating>
+
+            {loaded ? (
+              <Rating
+                r1={loaded && movie.Ratings[0]}
+                r2={loaded && movie.Ratings[1]}
+                r3={loaded && movie.Ratings[2]}
+              ></Rating>
+            ) : (
+              <div className="rating__container--skeleton skeleton"></div>
+            )}
           </div>
           <div className="movie__container--right">
             <div className="movie__description">
-              <p className="director">Director: {loaded && movie.Director}</p>
-              <p className="actors">Actors: {loaded && movie.Actors}</p>
-              <p className="plot">{loaded && movie.Plot}</p>
+              <p className="director">
+                Director{" "}
+                {loaded ? (
+                  <span className="blue-ml">{movie.Director}</span>
+                ) : (
+                  <span className="movie__info--skeleton skeleton">
+                    Christopher Nolan
+                  </span>
+                )}
+              </p>
+              <p className="actors">
+                <span className="actors--text">Actors</span>
+                {loaded ? (
+                  <span className="blue-ml">{movie.Actors}</span>
+                ) : (
+                  <span className="movie__info--skeleton skeleton">
+                    Christopher Nolan
+                  </span>
+                )}
+              </p>
+              {loaded ? (
+                <p className="plot">{movie.Plot}</p>
+              ) : (
+                <p className="plot skeleton">
+                  A thief who steals corporate secrets through the use of
+                  dream-sharing technology is given the inverse task of planting
+                  an idea into the mind of a C.E.O., but his tragic past may
+                  doom the project and his team to disaster.
+                </p>
+              )}
             </div>
             <div className="recommended__movies">
-              <Recommended ID={id ? id : null}></Recommended>
+              <h2 className="recommended__header">Recommended Movies</h2>
+              {loaded ? (
+                <Recommended ID={id}></Recommended>
+              ) : (
+                <div className="recommended__container recommended__container--skeleton">
+                  <div className="movie__wrapper--skeleton--rec">
+                    <div className="movie__img--skeleton skeleton">
+                      <div className="movie__poster--skeleton--recommended"></div>
+                    </div>
+                    <h3 className="movie__title--skeleton--recommended skeleton">
+                      Inception
+                    </h3>
+                    <h3 className="movie__title--skeleton--recommended skeleton">
+                      2010
+                    </h3>
+                  </div>
+                  <div className="movie__wrapper--skeleton--rec">
+                    <div className="movie__img--skeleton skeleton">
+                      <div className="movie__poster--skeleton--recommended"></div>
+                    </div>
+                    <h3 className="movie__title--skeleton--recommended skeleton">
+                      Inception
+                    </h3>
+                    <h3 className="movie__title--skeleton--recommended skeleton">
+                      2010
+                    </h3>
+                  </div>
+                  <div className="movie__wrapper--skeleton--rec">
+                    <div className="movie__img--skeleton skeleton">
+                      <div className="movie__poster--skeleton--recommended"></div>
+                    </div>
+                    <h3 className="movie__title--skeleton--recommended skeleton">
+                      Inception
+                    </h3>
+                    <h3 className="movie__title--skeleton--recommended skeleton">
+                      2010
+                    </h3>
+                  </div>
+                  <div className="movie__wrapper--skeleton--rec">
+                    <div className="movie__img--skeleton skeleton">
+                      <div className="movie__poster--skeleton--recommended"></div>
+                    </div>
+                    <h3 className="movie__title--skeleton--recommended skeleton">
+                      Inception
+                    </h3>
+                    <h3 className="movie__title--skeleton--recommended skeleton">
+                      2010
+                    </h3>
+                  </div>
+                </div>
+              )}
             </div>
           </div>
         </div>

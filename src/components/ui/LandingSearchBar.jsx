@@ -4,6 +4,12 @@ import { Link } from "react-router-dom";
 
 export default function LandingSeachBar() {
   const [value, setValue] = useState("football");
+  const handleKeyDown = (event) => {
+    if (event.key === "Enter") {
+      window.location.href = `/find-movies/${value}`;
+    }
+  };
+  window.addEventListener("keydown", handleKeyDown);
 
   return (
     <div className="search__container">

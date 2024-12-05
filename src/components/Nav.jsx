@@ -12,9 +12,15 @@ export default function Nav() {
         {openMenu && (
           <div className="menu">
             <ul>
-              <li className="menu__text">Home</li>
-              <li className="menu__text">Find Movies</li>
-              <li className="menu__text">Contact</li>
+              <Link to="/">
+                <li className="menu__text">Home</li>
+              </Link>
+              <Link to="/find-movies/funny">
+                <li className="menu__text">Find Movies</li>
+              </Link>
+              <Link to="/">
+                <li className="menu__text">Contact</li>
+              </Link>
             </ul>
 
             <FontAwesomeIcon

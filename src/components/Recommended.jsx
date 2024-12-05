@@ -9,7 +9,6 @@ import { useLocation, useParams } from "react-router-dom";
 // tt11145118
 
 export default function Recommended({ ID }) {
-  const location = useLocation();
   const [movies, setMovies] = useState();
   const [URLs, setURLs] = useState([
     "https://www.omdbapi.com/?i=tt1375666&apikey=421fadc",
@@ -50,21 +49,22 @@ export default function Recommended({ ID }) {
     }
 
     fetchMovie();
-  }, [ID, location]);
-
-  useEffect(() => {}, [location]);
+  }, [ID]);
 
   useEffect(() => console.log(ID), [ID]);
   return (
     <>
-      <h2 className="recommended__header">Recommended Movies</h2>
-      <div className="recommended__container">
-        {movies
-          ? movies.map((movie, index) => {
-              return <Movie key={index} movie={movie}></Movie>;
-            })
-          : null}
-      </div>
+      {movies ? (
+        <div className="recommended__container">
+          {movies.map((movie, index) => {
+            return (
+              <Movie key={index} movie={movie} className={"movie--rec"}></Movie>
+            );
+          })}
+        </div>
+      ) : (
+        <></>
+      )}
     </>
   );
 }

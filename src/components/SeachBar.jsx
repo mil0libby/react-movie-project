@@ -45,6 +45,13 @@ export default function SeachBar({ setMovies, setDisplayImg }) {
     console.log("Search value: " + searchValue);
   }, [searchValue]);
 
+  const handleKeyDown = (event) => {
+    if (event.key === "Enter") {
+      setClicked(true);
+    }
+  };
+  window.addEventListener("keydown", handleKeyDown);
+
   return (
     <div className="search__container">
       <h2 className="search__header">Find Movies</h2>
@@ -65,12 +72,10 @@ export default function SeachBar({ setMovies, setDisplayImg }) {
             setClicked(true);
           }}
         >
-          <button>
-            <FontAwesomeIcon
-              className="fa-brands"
-              icon="fa-solid fa-magnifying-glass"
-            />
-          </button>
+          <FontAwesomeIcon
+            className="fa-brands"
+            icon="fa-solid fa-magnifying-glass"
+          />
         </Link>
       </div>
     </div>
