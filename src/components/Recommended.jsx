@@ -14,7 +14,6 @@ export default function Recommended({ ID }) {
     "https://www.omdbapi.com/?i=tt1375666&apikey=421fadc",
     "https://www.omdbapi.com/?i=tt0317219&apikey=421fadc",
     "https://www.omdbapi.com/?i=tt0209144&apikey=421fadc",
-    "https://www.omdbapi.com/?i=tt1877830&apikey=421fadc",
   ]);
 
   async function getMovies() {

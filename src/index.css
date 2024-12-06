@@ -534,10 +534,6 @@ MOVIE DISPLAY
   padding: 20px 0;
 }
 
-.movie--rec {
-  width: calc(100% / 4);
-}
-
 .movie__wrapper--skeleton--rec {
   display: flex;
   flex-direction: column;
@@ -551,7 +547,6 @@ MOVIE DISPLAY
   }
 
   .movie--rec {
-    width: calc(100% / 4);
   }
 
   .movie__wrapper--skeleton {
